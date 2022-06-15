@@ -45,7 +45,7 @@ def get_fruit_load_list(my_cnx):
 
 def insert_in_fruit_load_list(my_cnx, new_fruit):
   with my_cnx.cursor() as my_cur:
-    my_cur.execute(f"insert into fruit_load_list values ({new_fruit})")
+    my_cur.execute(f"insert into fruit_load_list values ('{new_fruit}')")
     return "Thanks for adding '{new_fruit}'"
 
 streamlit.header("View our fruit List - Add you favorites!")
